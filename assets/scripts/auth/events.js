@@ -20,9 +20,9 @@ const signIn = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.signIn(data)
-    .then(console.log)
+    // .then(console.log)
+    .then(ui.signInSuccess)
     .catch(console.error)
-    // .then(ui.signInSuccess)
     // .catch(ui.signInFail)
 }
 
@@ -52,7 +52,7 @@ const changePassword = function (event) {
 const addHandlers = () => {
   $('#sign-up').on('submit', signUp)
   $('#sign-in').on('submit', signIn)
-  $('#sign-out').on('submit', signOut)
+  $('#sign-out').on('click', signOut)
   $('#change-password').on('submit', changePassword)
 }
 
