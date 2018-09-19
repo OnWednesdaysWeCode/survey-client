@@ -13,5 +13,35 @@
     </head>
     <body>
       <h1>Survey</h1>
+
+      <!-- sign-in form -->
+        <div class="card bg-light mb-3 sign-in">
+          <div class="card-header">Sign into your account</div>
+          <div class="card-body">
+            <p class="sign-in-status"></p>
+            <form id="sign-in">
+              <input type="email" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <button type="submit" class="btn">Log In</button>
+          </form>
+          <p> Not yet a member? <a class="sign-up-btn">Sign up now! </a></p>
+          </div>
+        </div>
+
+        <!-- sign-up form  -->
+        <div class="card bg-light mb-3 sign-up">
+          <div class="card-header">Create an account</div>
+          <div class="card-body">
+            <p class="sign-up-status"></p>
+            <form id="sign-up">
+              <input type="email" name="credentials[email]" placeholder="Email">
+              <input type="password" name="credentials[password]" placeholder="Password">
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
+              <button type="submit" class="btn">Sign Up</button>
+          </form>
+          <p> Already a member? <a class="sign-in-btn"> Log in</a></p>
+          </div>
+        </div>
+
     </body>
 </html>
