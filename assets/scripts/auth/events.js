@@ -27,7 +27,9 @@ const signIn = function (event) {
 }
 
 // function to log out
-const signOut = function () {
+const signOut = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
   api.signOut(data)
     .then(console.log)
     .catch(console.error)
@@ -36,7 +38,10 @@ const signOut = function () {
 }
 
 // function to change password
-const changePassword = function () {
+// NOT YET WORKING, MUST ADD CHANGE PASSWORD MODAL
+const changePassword = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
   api.changePassword(data)
     .then(console.log)
     .catch(console.error)
@@ -47,8 +52,8 @@ const changePassword = function () {
 const addHandlers = () => {
   $('#sign-up').on('submit', signUp)
   $('#sign-in').on('submit', signIn)
-  $('').on('click', signOut)
-  $('').on('click', changePassword)
+  $('#sign-out').on('submit', signOut)
+  $('#change-password').on('submit', changePassword)
 }
 
 module.exports = {
