@@ -5,25 +5,50 @@ const api = require('./api')
 const ui = require('./ui')
 
 // function to sign up
-const signUp = function () {
-
+const signUp = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.signUp(data)
+    .then(console.log)
+    .catch(console.error)
+    // .then(ui.signUpSuccess)
+    // .catch(ui.signUpFail)
 }
 
 // function to sign in
 const signIn = function () {
-
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.signIn(data)
+    .then(console.log)
+    .catch(console.error)
+    // .then(ui.signInSuccess)
+    // .catch(ui.signInFail)
 }
 
 // function to log out
 const signOut = function () {
-
+  api.signOut()
+    .then(console.log)
+    .catch(console.error)
+    // .then(ui.signOutSuccess)
+    // .catch(ui.signOutFail)
 }
 
+// function to change password
+const changePassword = function () {
+  api.changePassword()
+    .then(console.log)
+    .catch(console.error)
+    // .then(ui.changePasswordSuccess)
+    // .catch(ui.changePasswordFail)
+}
 
 const addHandlers = () => {
-  $('').on('click', signUp)
-  $('').on('click', signIn)
+  $('#sign-up').on('submit', signUp)
+  $('#sign-in').on('submit', signIn)
   $('').on('click', signOut)
+  $('').on('click', changePassword)
 }
 
 module.exports = {
