@@ -16,7 +16,7 @@ const signUp = function (event) {
 }
 
 // function to sign in
-const signIn = function () {
+const signIn = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.signIn(data)
@@ -28,7 +28,7 @@ const signIn = function () {
 
 // function to log out
 const signOut = function () {
-  api.signOut()
+  api.signOut(data)
     .then(console.log)
     .catch(console.error)
     // .then(ui.signOutSuccess)
@@ -37,7 +37,7 @@ const signOut = function () {
 
 // function to change password
 const changePassword = function () {
-  api.changePassword()
+  api.changePassword(data)
     .then(console.log)
     .catch(console.error)
     // .then(ui.changePasswordSuccess)
