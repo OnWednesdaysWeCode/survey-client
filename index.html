@@ -43,5 +43,33 @@
           </div>
         </div>
 
+        <!-- create survey form -->
+        <div class="card bg-light mb-3 create-survey">
+          <div class="card-header">Create a survey!</div>
+          <div class="card-body">
+            <p class="create-survey-status"></p>
+            <form id="create-survey">
+              <input type="text" name="surveys[title]" placeholder="Question">
+              <input type="text" name="surveys[optionOne]" placeholder="First Option">
+              <input type="text" name="surveys[optionTwo]" placeholder="Second Option">
+              <button type="submit" class="btn">Create your survey!</button>
+          </form>
+          </div>
+        </div>
+
+        <!-- take survey form -->
+        <div class="card bg-light mb-3 take-survey">
+          <!-- form will be moved over to utilizing handlebars -->
+          <div class="card-header survey-title">Do you like...?</div>
+          <div class="card-body">
+            <p class="take-survey-status"></p>
+            <form id="take-survey">
+              <input type="radio" name="response[answer]" value="Pepsi"> Pepsi<br>
+              <input type="radio" name="response[answer]" value="Coke"> Coke<br>
+              <button type="submit" class="btn">Submit your answer!</button>
+          </form>
+          </div>
+        </div>
+
     </body>
 </html>
