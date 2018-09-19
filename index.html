@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Survey</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -68,6 +68,25 @@
               <input type="radio" name="response[answer]" value="Coke"> Coke<br>
               <button type="submit" class="btn">Submit your answer!</button>
           </form>
+          </div>
+        </div>
+
+        <!-- survey results  -->
+        <div class="card bg-light mb-3 survey-results">
+          <div class="card-header">Survey results</div>
+          <div class="card-body">
+            <p class="survey-results-status"></p>
+            <h4>Total responses</h4>
+            <!-- total-responses updated using jQuery -->
+            <h3 id="total-responses">20</h3>
+            <!-- option 1 will be renamed using jQuery to actual option -->
+            <h4>Option 1:</h4>
+            <!-- option-one-responses updated using jQuery -->
+            <h3 id="option-one-responses">1</h3>
+            <!-- option 2 will be renamed using jQuery to actual option -->
+            <h4>Option 2:</h4>
+            <!-- option-two-responses updated using jQuery -->
+            <h3 id="option-two-responses">19</h3>
           </div>
         </div>
 
