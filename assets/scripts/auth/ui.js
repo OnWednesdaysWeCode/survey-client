@@ -23,6 +23,7 @@ const changePasswordFail = function () {
 }
 
 const logOutSuccess = function () {
+  store.user = null
 }
 
 const logOutFail = function () {

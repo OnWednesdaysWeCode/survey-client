@@ -29,8 +29,7 @@ const signIn = function (event) {
 // function to log out
 const signOut = function (event) {
   event.preventDefault()
-  const data = getFormFields(event.target)
-  api.signOut(data)
+  api.signOut()
     .then(console.log)
     .catch(console.error)
     // .then(ui.signOutSuccess)
