@@ -18,10 +18,8 @@ const signIn = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.signIn(data)
-    // .then(console.log)
     .then(ui.signInSuccess)
-    .catch(console.error)
-    // .catch(ui.signInFail)
+    .catch(ui.signInFail)
 }
 
 // function to log out

@@ -13,9 +13,13 @@ const signUpFail = function (response) {
 
 const signInSuccess = function (response) {
   store.user = response.user
+  console.log(store.user.email + 'signed in')
+  $('#sign-in input').val('')
 }
 
 const signInFail = function () {
+  console.log('not signed in')
+  $('#sign-in input').val('')
 }
 
 const changePasswordSuccess = function () {
