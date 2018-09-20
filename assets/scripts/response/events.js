@@ -14,6 +14,17 @@ const onGetResponses = function (event) {
       store.responseArray = survey.survey.responses
       const responseCount = store.responseArray.length
       console.log('count is', responseCount)
+      let option1Count = 0
+      let option2Count = 0
+      for (let i = 0; i < responseCount; i++) {
+        if (store.option1.value === store.responseArray[i].answer) {
+          option1Count += 1
+        } else if (store.option2.value === store.responseArray[i].answer) {
+          option2Count += 1
+        }
+      }
+      console.log('1', option1Count)
+      console.log('2', option2Count)
     })
     .catch(console.error)
 }
@@ -28,7 +39,9 @@ const onCreateResponse = function (event) {
   event.preventDefault()
   const form = $(event.target).closest('form')
   const option1 = form[0][0]
+  store.option1 = option1
   const option2 = form[0][1]
+  store.option2 = option2
   let answer = null
   if (option1.checked === true) {
     answer = (option1.value)
