@@ -30,6 +30,10 @@ const signInSuccess = function (response) {
 const signInFail = function () {
   console.log('not signed in')
   $('#sign-in input').val('')
+  $('.sign-in-status').addClass('fail')
+  $('.sign-in').addClass('border-danger')
+  $('.sign-in-status').text("We couldn't find you in our database! Make sure you enter the right username and password.")
+  $('input').val('')
 }
 
 const changePasswordSuccess = function () {
