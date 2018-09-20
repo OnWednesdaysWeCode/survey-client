@@ -15,6 +15,12 @@ const signInSuccess = function (response) {
   store.user = response.user
   console.log(store.user.email + 'signed in')
   $('#sign-in input').val('')
+  $('.sign-in').hide()
+  $('.sign-up').hide()
+  $('.change-password').show()
+  $('.create-survey').show()
+  $('#get-surveys').show()
+  $('#sign-out').show()
 }
 
 const signInFail = function () {
@@ -34,6 +40,13 @@ const changePasswordFail = function () {
 
 const logOutSuccess = function () {
   store.user = null
+  $('.sign-in').show()
+  $('.sign-up').show()
+  $('.change-password').hide()
+  $('.create-survey').hide()
+  $('#get-surveys').hide()
+  $('#sign-out').hide()
+  $('#populate-surveys').empty()
 }
 
 const logOutFail = function () {
