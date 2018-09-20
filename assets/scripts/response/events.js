@@ -11,6 +11,9 @@ const onGetResponses = function (event) {
   api.showSurvey(id)
     .then(survey => {
       console.log(survey.survey.responses)
+      store.responseArray = survey.survey.responses
+      const responseCount = store.responseArray.length
+      console.log('count is', responseCount)
     })
     .catch(console.error)
 }
