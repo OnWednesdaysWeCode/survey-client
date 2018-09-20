@@ -30,6 +30,17 @@ const getSurveys = function (event) {
 
 const submitAnswer = function (event) {
   event.preventDefault()
+  const form = $(event.target).closest('form')
+  console.log(form)
+  const option1 = form[0][0]
+  const option2 = form[0][1]
+  console.log(option1.checked)
+  console.log(option2.checked)
+  if (option1.checked === true) {
+    console.log(option1.value)
+  } else if (option2.checked === true) {
+    console.log(option2.value)
+  }
   console.log('submitted')
 }
 
@@ -43,7 +54,7 @@ const addHandlers = () => {
   $('#create-survey').on('submit', onCreateSurvey)
   $('#get-surveys').on('click', onGetSurveys)
   $('#get-surveys').on('click', getSurveys)
-  $('.populate-surveys').on('submit', '.submit-answer', submitAnswer)
+  $('.populate-surveys').on('click', '.submit-answer', submitAnswer)
   $('.populate-surveys').on('click', '.see-results', seeResults)
 }
 
