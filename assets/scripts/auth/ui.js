@@ -21,6 +21,21 @@ const addSuccessStyle = function (className) {
   $(`.${className}`).addClass('border-success')
 }
 
+const toggleSignUp = function () {
+  $('.sign-in').hide()
+  $('.sign-up').show()
+  $('.sign-up-status').empty()
+  removeFailStyle('sign-up')
+  removeSuccessStyle('sign-up')
+}
+
+const toggleSignIn = function () {
+  $('.sign-in').show()
+  $('.sign-up').hide()
+  removeFailStyle('sign-in')
+  removeSuccessStyle('sign-in')
+}
+
 const signUpSuccess = function () {
   console.log('signed up')
   $('#sign-up input').val('')
@@ -78,7 +93,6 @@ const changePasswordFail = function () {
 const logOutSuccess = function () {
   store.user = null
   $('.sign-in').show()
-  $('.sign-up').show()
   $('.change-password').hide()
   $('.create-survey').hide()
   $('#get-surveys').hide()
@@ -106,5 +120,7 @@ module.exports = {
   signInFail,
   signUpFail,
   logOutFail,
-  changePasswordFail
+  changePasswordFail,
+  toggleSignIn,
+  toggleSignUp
 }
