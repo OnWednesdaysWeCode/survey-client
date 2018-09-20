@@ -14,7 +14,7 @@ const createResponse = (answer, surveyId) => {
     data: {
       response: {
         answer: answer,
-        surveId: surveyId
+        survey: surveyId
       }
     }
   })
