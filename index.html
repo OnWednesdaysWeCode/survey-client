@@ -91,20 +91,6 @@
         <!-- get surveys button -->
         <button type="button" name="button" id="get-surveys">Show All Surveys</button>
 
-        <!-- take survey form -->
-        <div class="card bg-light mb-3 take-survey">
-          <!-- form will be moved over to utilizing handlebars -->
-          <div class="card-header survey-title">Do you like...?</div>
-          <div class="card-body">
-            <p class="take-survey-status"></p>
-            <form id="take-survey">
-              <input type="radio" name="response[answer]" value="Pepsi"> Pepsi<br>
-              <input type="radio" name="response[answer]" value="Coke"> Coke<br>
-              <button type="submit" class="btn">Submit your answer!</button>
-          </form>
-          </div>
-        </div>
-
         <!-- survey results  -->
         <div class="card bg-light mb-3 survey-results">
           <div class="card-header">Survey results</div>
@@ -123,6 +109,10 @@
             <h3 id="option-two-responses">19</h3>
           </div>
         </div>
+
+        <!-- show all surveys to take  -->
+      <div id="populate-surveys" class="populate-surveys"></div>
+
 
     </body>
 </html>

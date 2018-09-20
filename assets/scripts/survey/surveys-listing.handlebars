@@ -1,0 +1,18 @@
+{{#each surveys as |survey|}}
+<div class="card bg-light mb-3 take-survey" data-id="{{survey.id}}">
+  <!-- form will be moved over to utilizing handlebars -->
+  <div class="card-header survey-title">
+    <h1>{{survey.question}}</h1>
+  </div>
+  <div class="card-body">
+    <form class="take-survey">
+      <input type="radio" name="response[answer]" value="{{survey.option1}}"> {{survey.option1}}<br>
+      <input type="radio" name="response[answer]" value="{{survey.option2}}"> {{survey.option2}}<br>
+      <button type="submit" class="btn">Submit your answer!</button>
+  </form>
+  </div>
+</div>
+
+{{else}}
+  <p> There are no surveys to take </p>
+{{/each}}

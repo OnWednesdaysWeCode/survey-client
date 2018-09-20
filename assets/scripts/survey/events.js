@@ -3,7 +3,7 @@
 
 const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
-// const ui = require('./ui')
+const ui = require('./ui')
 const store = require('../store.js')
 
 const onGetSurveys = function (event) {
@@ -22,9 +22,16 @@ const onCreateSurvey = function (event) {
     .catch(console.error)
 }
 
+const getSurveys = function (event) {
+  api.getSurveys()
+    .then(ui.showAllSurveys)
+    .catch(console.error)
+}
+
 const addHandlers = () => {
   $('#create-survey').on('submit', onCreateSurvey)
   $('#get-surveys').on('click', onGetSurveys)
+  $('#get-surveys').on('click', getSurveys)
 }
 
 module.exports = {
