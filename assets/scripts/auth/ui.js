@@ -4,6 +4,11 @@ const config = require('./../config.js')
 const signUpSuccess = function () {
   console.log('signed up')
   $('#sign-up input').val('')
+  $('.sign-up-status').removeClass('fail')
+  $('.sign-up').removeClass('border-danger')
+  $('.sign-up-status').text('You are now signed up! Log in to start studying')
+  $('.sign-up-status').addClass('success')
+  $('.sign-up').addClass('border-success')
 }
 
 const signUpFail = function () {
@@ -25,6 +30,8 @@ const signInSuccess = function (response) {
   $('.create-survey').show()
   $('#get-surveys').show()
   $('#sign-out').show()
+  $('.sign-in-status').removeClass('fail')
+  $('.sign-in').removeClass('border-danger')
 }
 
 const signInFail = function () {
