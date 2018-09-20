@@ -6,9 +6,13 @@ const signUpSuccess = function () {
   $('#sign-up input').val('')
 }
 
-const signUpFail = function (response) {
+const signUpFail = function () {
   console.log('not signed up')
   $('#sign-up input').val('')
+  $('.sign-up-status').text('We are having trouble signing you up right now. Try again later.')
+  $('input').val('')
+  $('.sign-up-status').addClass('fail')
+  $('.sign-up').addClass('border-danger')
 }
 
 const signInSuccess = function (response) {
