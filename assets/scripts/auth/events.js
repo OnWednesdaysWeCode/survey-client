@@ -37,7 +37,6 @@ const signOut = function (event) {
 }
 
 // function to change password
-// NOT YET WORKING, MUST ADD CHANGE PASSWORD MODAL
 const changePassword = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
