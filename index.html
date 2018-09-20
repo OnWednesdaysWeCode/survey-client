@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Survey</title>
+      <title>Example</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,117 +12,6 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <!-- nav bar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand">SurveyMongoose</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-              <a class="nav-link" href="#">Change Password <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" id="sign-out">Sign-out</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
       <h1>Survey</h1>
-
-      <!-- sign-in form -->
-        <div class="card bg-light mb-3 sign-in">
-          <div class="card-header">Sign into your account</div>
-          <div class="card-body">
-            <p class="sign-in-status"></p>
-            <form id="sign-in">
-              <input type="email" name="credentials[email]" placeholder="Email">
-              <input type="password" name="credentials[password]" placeholder="Password">
-              <button type="submit" class="btn">Log In</button>
-          </form>
-          <p> Not yet a member? <a class="sign-up-btn">Sign up now! </a></p>
-          </div>
-        </div>
-
-        <!-- sign-up form  -->
-        <div class="card bg-light mb-3 sign-up">
-          <div class="card-header">Create an account</div>
-          <div class="card-body">
-            <p class="sign-up-status"></p>
-            <form id="sign-up">
-              <input type="email" name="credentials[email]" placeholder="Email">
-              <input type="password" name="credentials[password]" placeholder="Password">
-              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
-              <button type="submit" class="btn">Sign Up</button>
-          </form>
-          <p> Already a member? <a class="sign-in-btn"> Log in</a></p>
-          </div>
-        </div>
-
-        <!-- change password form -->
-        <div class="card bg-light mb-3 change-password">
-          <div class="card-header">Change Password</div>
-          <div class="card-body">
-            <p class="change-password-status"></p>
-            <form id="change-password">
-              <input type="password" name="passwords[old]" placeholder="Current Password">
-              <input type="password" name="passwords[new]" placeholder="New Password">
-              <button type="submit" class="btn">Change Password</button>
-          </form>
-          </div>
-        </div>
-
-
-        <!-- create survey form -->
-        <div class="card bg-light mb-3 create-survey">
-          <div class="card-header">Create a survey!</div>
-          <div class="card-body">
-            <p class="create-survey-status"></p>
-            <form id="create-survey">
-              <input type="text" name="survey[question]" placeholder="Question">
-              <input type="text" name="survey[option1]" placeholder="First Option">
-              <input type="text" name="survey[option2]" placeholder="Second Option">
-              <button type="submit" class="btn">Create your survey!</button>
-          </form>
-          </div>
-        </div>
-
-        <!-- get surveys button -->
-        <button type="button" name="button" id="get-surveys">Show All Surveys</button>
-
-        <!-- take survey form -->
-        <div class="card bg-light mb-3 take-survey">
-          <!-- form will be moved over to utilizing handlebars -->
-          <div class="card-header survey-title">Do you like...?</div>
-          <div class="card-body">
-            <p class="take-survey-status"></p>
-            <form id="take-survey">
-              <input type="radio" name="response[answer]" value="Pepsi"> Pepsi<br>
-              <input type="radio" name="response[answer]" value="Coke"> Coke<br>
-              <button type="submit" class="btn">Submit your answer!</button>
-          </form>
-          </div>
-        </div>
-
-        <!-- survey results  -->
-        <div class="card bg-light mb-3 survey-results">
-          <div class="card-header">Survey results</div>
-          <div class="card-body">
-            <p class="survey-results-status"></p>
-            <h4>Total responses</h4>
-            <!-- total-responses updated using jQuery -->
-            <h3 id="total-responses">20</h3>
-            <!-- option 1 will be renamed using jQuery to actual option -->
-            <h4>Option 1:</h4>
-            <!-- option-one-responses updated using jQuery -->
-            <h3 id="option-one-responses">1</h3>
-            <!-- option 2 will be renamed using jQuery to actual option -->
-            <h4>Option 2:</h4>
-            <!-- option-two-responses updated using jQuery -->
-            <h3 id="option-two-responses">19</h3>
-          </div>
-        </div>
-
     </body>
 </html>
