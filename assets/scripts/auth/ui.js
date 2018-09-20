@@ -23,10 +23,13 @@ const signInFail = function () {
 }
 
 const changePasswordSuccess = function () {
-
+  console.log('password changed')
+  $('#change-password input').val('')
 }
 
 const changePasswordFail = function () {
+  console.log('password not changed')
+  $('#change-password input').val('')
 }
 
 const logOutSuccess = function () {

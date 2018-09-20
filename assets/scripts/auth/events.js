@@ -37,10 +37,8 @@ const changePassword = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.changePassword(data)
-    .then(console.log('password changed'))
-    .catch(console.error)
-    // .then(ui.changePasswordSuccess)
-    // .catch(ui.changePasswordFail)
+    .then(ui.changePasswordSuccess)
+    .catch(ui.changePasswordFail)
 }
 
 const addHandlers = () => {
