@@ -12,21 +12,25 @@ const onGetResponses = function (event) {
     .then(survey => {
       console.log(survey.survey.responses)
       store.responseArray = survey.survey.responses
-      const responseCount = store.responseArray.length
-      console.log('count is', responseCount)
-      let option1Count = 0
-      let option2Count = 0
-      for (let i = 0; i < responseCount; i++) {
-        if (store.option1.value === store.responseArray[i].answer) {
-          option1Count += 1
-        } else if (store.option2.value === store.responseArray[i].answer) {
-          option2Count += 1
-        }
-      }
-      console.log('1', option1Count)
-      console.log('2', option2Count)
+      calculateResponse()
     })
     .catch(console.error)
+}
+
+const calculateResponse = function () {
+  const responseCount = store.responseArray.length
+  console.log('count is', responseCount)
+  let option1Count = 0
+  let option2Count = 0
+  for (let i = 0; i < responseCount; i++) {
+    if (store.option1.value === store.responseArray[i].answer) {
+      option1Count += 1
+    } else if (store.option2.value === store.responseArray[i].answer) {
+      option2Count += 1
+    }
+  }
+  console.log('1', option1Count)
+  console.log('2', option2Count)
 }
 
 // const seeResults = function (event) {
