@@ -28,27 +28,6 @@ const getSurveys = function (event) {
     .catch(console.error)
 }
 
-const submitAnswer = function (event) {
-  event.preventDefault()
-  const form = $(event.target).closest('form')
-  console.log(form)
-  const option1 = form[0][0]
-  const option2 = form[0][1]
-  console.log(option1.checked)
-  console.log(option2.checked)
-  if (option1.checked === true) {
-    console.log(option1.value)
-  } else if (option2.checked === true) {
-    console.log(option2.value)
-  }
-  console.log('submitted')
-  $(form).hide()
-  const div = $(event.target).closest('div')
-  console.log(div[0].children[1])
-  const results = div[0].children[1]
-  $(results).removeClass('d-none')
-}
-
 // const seeResults = function (event) {
 //   event.preventDefault()
 //   const surveyId = $(event.target).closest('section').data('id')
@@ -59,7 +38,6 @@ const addHandlers = () => {
   $('#create-survey').on('submit', onCreateSurvey)
   $('#get-surveys').on('click', onGetSurveys)
   $('#get-surveys').on('click', getSurveys)
-  $('.populate-surveys').on('click', '.submit-answer', submitAnswer)
 }
 
 module.exports = {
