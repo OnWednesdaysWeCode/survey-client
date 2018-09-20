@@ -9,10 +9,8 @@ const signUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.signUp(data)
-    .then(console.log)
-    .catch(console.error)
-    // .then(ui.signUpSuccess)
-    // .catch(ui.signUpFail)
+    .then(ui.signUpSuccess)
+    .catch(ui.signUpFail)
 }
 
 // function to sign in
@@ -20,10 +18,8 @@ const signIn = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.signIn(data)
-    // .then(console.log)
     .then(ui.signInSuccess)
-    .catch(console.error)
-    // .catch(ui.signInFail)
+    .catch(ui.signInFail)
 }
 
 // function to log out
@@ -41,10 +37,8 @@ const changePassword = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.changePassword(data)
-    .then(console.log('password changed'))
-    .catch(console.error)
-    // .then(ui.changePasswordSuccess)
-    // .catch(ui.changePasswordFail)
+    .then(ui.changePasswordSuccess)
+    .catch(ui.changePasswordFail)
 }
 
 const addHandlers = () => {
