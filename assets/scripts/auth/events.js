@@ -9,10 +9,8 @@ const signUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.signUp(data)
-    .then(console.log)
-    .catch(console.error)
-    // .then(ui.signUpSuccess)
-    // .catch(ui.signUpFail)
+    .then(ui.signUpSuccess)
+    .catch(ui.signUpFail)
 }
 
 // function to sign in

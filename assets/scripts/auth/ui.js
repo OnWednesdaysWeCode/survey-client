@@ -2,10 +2,13 @@ const store = require('./../store.js')
 const config = require('./../config.js')
 
 const signUpSuccess = function () {
+  console.log('signed up')
+  $('#sign-up input').val('')
 }
 
 const signUpFail = function (response) {
-
+  console.log('not signed up')
+  $('#sign-up input').val('')
 }
 
 const signInSuccess = function (response) {
