@@ -42,20 +42,24 @@ const submitAnswer = function (event) {
     console.log(option2.value)
   }
   console.log('submitted')
+  $(form).hide()
+  const div = $(event.target).closest('div')
+  console.log(div[0].children[1])
+  const results = div[0].children[1]
+  $(results).removeClass('d-none')
 }
 
-const seeResults = function (event) {
-  event.preventDefault()
-  const surveyId = $(event.target).closest('section').data('id')
-  console.log('see results', surveyId)
-}
+// const seeResults = function (event) {
+//   event.preventDefault()
+//   const surveyId = $(event.target).closest('section').data('id')
+//   console.log('see results', surveyId)
+// }
 
 const addHandlers = () => {
   $('#create-survey').on('submit', onCreateSurvey)
   $('#get-surveys').on('click', onGetSurveys)
   $('#get-surveys').on('click', getSurveys)
   $('.populate-surveys').on('click', '.submit-answer', submitAnswer)
-  $('.populate-surveys').on('click', '.see-results', seeResults)
 }
 
 module.exports = {
