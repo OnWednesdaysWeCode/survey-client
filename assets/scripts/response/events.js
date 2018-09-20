@@ -31,6 +31,9 @@ const calculateResponse = function () {
   }
   console.log('1', option1Count)
   console.log('2', option2Count)
+  $('.populate-surveys #total-responses').text(responseCount)
+  $('.populate-surveys #option-one-responses').text(option1Count)
+  $('.populate-surveys #option-two-responses').text(option2Count)
 }
 
 // const seeResults = function (event) {
