@@ -6,10 +6,19 @@ const api = require('./api')
 const store = require('../store.js')
 
 const onGetResponses = function (event) {
+  event.preventDefault()
+  const surveyId = $(event.target).closest('section').data('id')
+  console.log('see results', surveyId)
   api.getResponses()
     .then(console.log)
     .catch(console.error)
 }
+
+// const seeResults = function (event) {
+//   event.preventDefault()
+//   const surveyId = $(event.target).closest('section').data('id')
+//   console.log('see results', surveyId)
+// }
 
 const onCreateResponse = function (event) {
   event.preventDefault()
@@ -31,6 +40,7 @@ const onCreateResponse = function (event) {
   const surveyId = $(event.target).closest('section').data('id')
   api.createResponse(answer, surveyId)
     .then(console.log)
+    .then(() => onGetResponses(event))
     .catch(console.error)
 }
 

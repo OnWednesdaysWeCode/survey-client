@@ -28,12 +28,6 @@ const getSurveys = function (event) {
     .catch(console.error)
 }
 
-// const seeResults = function (event) {
-//   event.preventDefault()
-//   const surveyId = $(event.target).closest('section').data('id')
-//   console.log('see results', surveyId)
-// }
-
 const addHandlers = () => {
   $('#create-survey').on('submit', onCreateSurvey)
   $('#get-surveys').on('click', onGetSurveys)
