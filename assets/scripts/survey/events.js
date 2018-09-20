@@ -18,8 +18,8 @@ const onCreateSurvey = function (event) {
   console.log('clicked!')
   const data = getFormFields(this)
   api.createSurvey(data)
-    .then(console.log)
-    .catch(console.error)
+    .then(ui.createSurveySuccess)
+    .catch(ui.createSurveyFailure)
 }
 
 const getSurveys = function (event) {
