@@ -2,15 +2,16 @@
 
 const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
-// const ui = require('./ui')
 const store = require('../store.js')
 
 const onGetResponses = function (event) {
   event.preventDefault()
-  const surveyId = $(event.target).closest('section').data('id')
-  console.log('see results', surveyId)
-  api.getResponses()
-    .then(console.log)
+  const id = $(event.target).closest('section').data('id')
+  console.log('see results', id)
+  api.showSurvey(id)
+    .then(survey => {
+      console.log(survey.survey.responses)
+    })
     .catch(console.error)
 }
 
