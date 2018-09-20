@@ -28,10 +28,23 @@ const getSurveys = function (event) {
     .catch(console.error)
 }
 
+const submitAnswer = function (event) {
+  event.preventDefault()
+  console.log('submitted')
+}
+
+const seeResults = function (event) {
+  event.preventDefault()
+  const surveyId = $(event.target).closest('section').data('id')
+  console.log('see results', surveyId)
+}
+
 const addHandlers = () => {
   $('#create-survey').on('submit', onCreateSurvey)
   $('#get-surveys').on('click', onGetSurveys)
   $('#get-surveys').on('click', getSurveys)
+  $('.populate-surveys').on('submit', '.submit-answer', submitAnswer)
+  $('.populate-surveys').on('click', '.see-results', seeResults)
 }
 
 module.exports = {
