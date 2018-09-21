@@ -6,7 +6,7 @@ const api = require('./api')
 const ui = require('./ui')
 const store = require('../store.js')
 
-const getMySurveys = function (event) {
+const onGetMySurveys = function (event) {
   event.preventDefault()
   api.getSurveys()
     .then(surveys => {
@@ -39,7 +39,7 @@ const onCreateSurvey = function (event) {
     .catch(ui.createSurveyFailure)
 }
 
-const getSurveys = function (event) {
+const onGetSurveys = function (event) {
   api.getSurveys()
     .then(ui.showAllSurveys)
     .catch(console.error)
@@ -47,8 +47,8 @@ const getSurveys = function (event) {
 
 const addHandlers = () => {
   $('#create-survey').on('submit', onCreateSurvey)
-  $('#get-surveys').on('click', getSurveys)
-  $('#my-surveys').on('click', getMySurveys)
+  $('#get-surveys').on('click', onGetSurveys)
+  $('#my-surveys').on('click', onGetMySurveys)
 }
 
 module.exports = {
