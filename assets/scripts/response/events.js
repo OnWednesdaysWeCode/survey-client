@@ -12,12 +12,13 @@ const onGetResponses = function (event) {
     .then(survey => {
       console.log(survey.survey.responses)
       store.responseArray = survey.survey.responses
-      calculateResponse()
+      // store.surveyId = id
+      calculateResponse(id)
     })
     .catch(console.error)
 }
 
-const calculateResponse = function () {
+const calculateResponse = function (id) {
   const responseCount = store.responseArray.length
   console.log('count is', responseCount)
   let option1Count = 0
@@ -31,9 +32,11 @@ const calculateResponse = function () {
   }
   console.log('1', option1Count)
   console.log('2', option2Count)
-  $('.populate-surveys #total-responses').text(responseCount)
-  $('.populate-surveys #option-one-responses').text(option1Count)
-  $('.populate-surveys #option-two-responses').text(option2Count)
+  // '.populate-surveys #3 #total-responses'
+  $('.populate-surveys ' + '#' + id + ' .total-responses').text(responseCount)
+  console.log('new Id', id)
+  $('.populate-surveys ' + '#' + id + ' .option-one-responses').text(option1Count)
+  $('.populate-surveys ' + '#' + id + ' .option-two-responses').text(option2Count)
 }
 
 // const seeResults = function (event) {
