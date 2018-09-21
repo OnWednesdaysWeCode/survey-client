@@ -63,6 +63,7 @@ const signInSuccess = function (response) {
   $('.create-survey').show()
   $('#get-surveys').show()
   $('#sign-out').show()
+  $('.navbar-toggler').removeClass('d-none')
   removeFailStyle('sign-in')
 }
 
@@ -97,6 +98,7 @@ const logOutSuccess = function () {
   $('.create-survey').hide()
   $('#get-surveys').hide()
   $('#sign-out').hide()
+  $('.navbar-toggler').addClass('d-none')
   $('#populate-surveys').empty()
   removeSuccessStyle('sign-up')
   removeSuccessStyle('sign-in')
