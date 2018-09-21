@@ -35,7 +35,10 @@ const showAllSurveys = function (data) {
 }
 
 const showMySurveys = function (mySurveys) {
+<<<<<<< HEAD
   $('.populate-surveys').html('')
+=======
+>>>>>>> On edit survey button click, forms show with placeholders
   const getSurveysHtml = mySurveysPopulate({surveys: mySurveys})
   $('.populate-surveys').append(getSurveysHtml)
   // remove border color
@@ -63,9 +66,14 @@ const createSurveyFailure = function () {
   console.log('survey not created')
 }
 
+const editMySurvey = function () {
+
+}
+
 module.exports = {
   showAllSurveys,
   createSurveySuccess,
   createSurveyFailure,
-  showMySurveys
+  showMySurveys,
+  editMySurvey
 }
