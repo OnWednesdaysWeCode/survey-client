@@ -41,7 +41,7 @@ const signUpSuccess = function () {
   $('#sign-up input').val('')
   removeFailStyle('sign-up')
   addSuccessStyle('sign-up')
-  $('.sign-up-status').text('You are now signed up! Log in to start studying')
+  $('.sign-up-status').text('You are now signed up! Log in to create or take surveys.')
 }
 
 const signUpFail = function () {
@@ -63,6 +63,8 @@ const signInSuccess = function (response) {
   $('.create-survey').show()
   $('#get-surveys').show()
   $('#sign-out').show()
+  $('.navbar-toggler').removeClass('d-none')
+  $('.navbar-nav').removeClass('d-none')
   removeFailStyle('sign-in')
 }
 
@@ -97,6 +99,8 @@ const logOutSuccess = function () {
   $('.create-survey').hide()
   $('#get-surveys').hide()
   $('#sign-out').hide()
+  $('.navbar-toggler').addClass('d-none')
+  $('.navbar-nav').addClass('d-none')
   $('#populate-surveys').empty()
   removeSuccessStyle('sign-up')
   removeSuccessStyle('sign-in')
@@ -107,6 +111,8 @@ const logOutSuccess = function () {
   $('.change-password-status').text('')
   $('.sign-in-status').text('')
   $('.sign-up-status').text('')
+  $('#create-survey input').val('')
+  $('#change-password input').val('')
 }
 
 const logOutFail = function () {
