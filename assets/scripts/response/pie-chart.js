@@ -1,9 +1,9 @@
-const pieChart = function (option1, option2, value1, value2, surveyId) {
+const pieChart = function (option1, option2, count1, count2, surveyId) {
 
   // set the data
   const data = [
-    {x: option1, value: value1},
-    {x: option2, value: value2}
+    {x: option1, value: count1},
+    {x: option2, value: count2}
   ]
 
   // create the chart
