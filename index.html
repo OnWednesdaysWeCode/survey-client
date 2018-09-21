@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
-      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link rel="shortcut icon" type="image/x-icon" href="./public/favicon.png">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -14,7 +14,6 @@
       <script src="https://static.anychart.com/js/8.0.1/anychart-pie.min.js"></script>
     </head>
     <body>
-
       <!-- nav bar -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light d-none">
         <a class="navbar-brand">This or That</a>
@@ -33,10 +32,6 @@
           </ul>
         </div>
       </nav>
-
-      <!-- error-message -->
-      <div class="general-errors d-none fail">
-      </div>
 
       <div class="content">
         <img src="./public/logo.png">
@@ -101,6 +96,23 @@
         <!-- get surveys button -->
         <button class="btn" type="button" name="button" id="my-surveys">Show My Surveys</button>
 
+        <!-- survey results
+        <div class="card bg-light mb-3 survey-results">
+          <div class="card-header">Survey results</div>
+          <div class="card-body">
+            <p class="survey-results-status"></p>
+            <h4>Total responses</h4>
+            <h3 id="total-responses">20</h3>
+            <h4>Option 1:</h4>
+
+            <h3 id="option-one-responses">1</h3>
+
+            <h4>Option 2:</h4>
+
+            <h3 id="option-two-responses">19</h3>
+          </div>
+        </div>
+-->
         <!-- show all surveys to take  -->
       <div id="populate-surveys" class="populate-surveys">
         <div class="error-message fail">
