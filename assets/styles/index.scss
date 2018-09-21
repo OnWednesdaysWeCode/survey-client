@@ -1,4 +1,28 @@
 @import '~bootstrap/scss/bootstrap';
+@import './colors';
+
+// content styling (styling minus nav bar)
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.background {
+  background: linear-gradient(90deg, $dark-blue 50%, $light-blue 50%);
+}
+
+img {
+  align-self: center;
+  justify-content: center;
+  height: 300px;
+  // display: none;
+}
+.content {
+    height: 1000px;
+    margin: 0 10% 0 10%;
+    display: flex;
+    flex-direction: column;
+}
 
 // landing page
 .sign-up {
@@ -20,7 +44,6 @@
 #sign-out {
   display: none;
 }
-
 // end landing page
 
 // fail message
