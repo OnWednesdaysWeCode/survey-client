@@ -111,6 +111,8 @@ const logOutSuccess = function () {
   $('.change-password-status').text('')
   $('.sign-in-status').text('')
   $('.sign-up-status').text('')
+  $('#create-survey input').val('')
+  $('#change-password input').val('')
 }
 
 const logOutFail = function () {
