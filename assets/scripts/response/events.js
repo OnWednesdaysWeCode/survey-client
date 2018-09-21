@@ -4,6 +4,7 @@ const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
 const store = require('../store.js')
 const pieChart = require('./pie-chart.js')
+const ui = require('./ui')
 
 const onGetResponses = function (event) {
   event.preventDefault()
@@ -65,17 +66,23 @@ const onCreateResponse = function (event) {
   } else if (option2.checked === true) {
     answer = (option2.value)
   }
-  console.log('submitted')
-  $(form).hide()
-  const div = $(event.target).closest('div')
-  console.log(div[0].children[1])
-  const results = div[0].children[1]
-  $(results).removeClass('d-none')
-  const surveyId = $(event.target).closest('section').data('id')
-  api.createResponse(answer, surveyId)
-    .then(console.log)
-    .then(() => onGetResponses(event))
-    .catch(console.error)
+  if (answer !== null) {
+    $(form).hide()
+    const div = $(event.target).closest('div')
+    console.log(div[0].children[1])
+    const results = div[0].children[1]
+    $(results).removeClass('d-none')
+    const surveyId = $(event.target).closest('section').data('id')
+    api.createResponse(answer, surveyId)
+      .then(console.log)
+      .then(() => onGetResponses(event))
+      .catch(console.error)
+  } else {
+    console.log('error')
+    const errorSurveyId = $(event.target).closest('section').data('id')
+    console.log(errorSurveyId)
+    $('[data-id=' + errorSurveyId + '] .card-body .error-message').text('Please select an answer before submitting')
+  }
 }
 
 const addHandlers = () => {
