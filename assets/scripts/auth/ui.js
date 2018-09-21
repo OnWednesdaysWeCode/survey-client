@@ -41,7 +41,7 @@ const signUpSuccess = function () {
   $('#sign-up input').val('')
   removeFailStyle('sign-up')
   addSuccessStyle('sign-up')
-  $('.sign-up-status').text('You are now signed up! Log in to start studying')
+  $('.sign-up-status').text('You are now signed up! Log in to create or take surveys.')
 }
 
 const signUpFail = function () {
