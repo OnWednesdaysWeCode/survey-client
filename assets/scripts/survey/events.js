@@ -13,7 +13,6 @@ const onGetMySurveys = function (event) {
       const surveryArray = surveys.surveys
       userSurveys(surveryArray)
     })
-    .then()
     .catch(ui.failure)
 }
 
@@ -26,16 +25,13 @@ const userSurveys = function (allSurveyArray) {
     }
   }
   ui.showMySurveys(store.userSurveys)
-  // console.log(store.userSurveys)
 }
 
 const onCreateSurvey = function (event) {
   event.preventDefault()
-  // console.log('clicked!')
   const data = getFormFields(this)
   api.createSurvey(data)
     .then(ui.createSurveySuccess)
-    // .then(() => onGetSurveys(event)
     .catch(ui.createSurveyFailure)
 }
 
@@ -49,20 +45,17 @@ const onDeleteSurvey = function (event) {
   const surveyId = $(event.target).closest('section').data('id')
   api.destroySurvey(surveyId)
     .then(() => onGetMySurveys())
-    .catch()
+    .catch(ui.failure)
 }
 
 const onSaveSurvey = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log(data)
-  console.log(store.surveyId)
   api.updateSurvey(store.surveyId, data)
     .then(() => {
       onGetMySurveys()
     })
-    .then(console.log)
-    .catch(console.error)
+    .catch(ui.failure)
 }
 
 const editSurvey = function (event) {
