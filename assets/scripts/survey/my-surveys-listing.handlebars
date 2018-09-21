@@ -6,14 +6,23 @@
     <h1>{{survey.question}}</h1>
   </div>
   <div class="card-body">
+    <p class="error-message fail"></p>
     <form class="take-survey">
-      <p class="error-message fail"></p>
       <input type="radio" name="response[answer]" value="{{survey.option1}}"> {{survey.option1}}<br>
       <input type="radio" name="response[answer]" value="{{survey.option2}}"> {{survey.option2}}<br>
       <button class="btn btn-danger delete-survey" type="button">Delete</button>
+    </form>
+  <form class="d-none edit-survey">
+    <input type="text" name="survey[question]" placeholder={{survey.question}}>
+    <input type="text" name="survey[option1]" placeholder={{survey.option1}}>
+    <input type="text" name="survey[option2]" placeholder={{survey.option2}}>
+    <Button class="btn btn-success d-none save-changes-btn">Save Changes</Button>
   </form>
+    <Button class="btn btn-warning edit-survey-btn">Edit survey</Button>
+  </div>
+    </div>
+  </div>
   <div class="results d-none" id={{survey._id}}>
-
   </div>
   </div>
 </div>

@@ -67,5 +67,5 @@ module.exports = {
   showAllSurveys,
   createSurveySuccess,
   createSurveyFailure,
-  showMySurveys
+  showMySurveys,
 }

@@ -52,11 +52,35 @@ const onDeleteSurvey = function (event) {
     .catch()
 }
 
+const onSaveSurvey = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log(data)
+  console.log(store.surveyId)
+  api.updateSurvey(store.surveyId, data)
+    .then(() => {
+      onGetMySurveys()
+    })
+    .then(console.log)
+    .catch(console.error)
+}
+
+const editSurvey = function (event) {
+  const surveyId = $(event.target).closest('section').data('id')
+  store.surveyId = surveyId
+  $('[data-id=' + surveyId + '] .card-body form.take-survey').addClass('d-none')
+  $('[data-id=' + surveyId + '] .card-body form.edit-survey').removeClass('d-none')
+  $('[data-id=' + surveyId + '] .card-body .edit-survey-btn').addClass('d-none')
+  $('[data-id=' + surveyId + '] .card-body .save-changes-btn').removeClass('d-none')
+}
+
 const addHandlers = () => {
   $('#create-survey').on('submit', onCreateSurvey)
   $('#get-surveys').on('click', onGetSurveys)
   $('#my-surveys').on('click', onGetMySurveys)
   $('.populate-surveys').on('click', '.delete-survey', onDeleteSurvey)
+  $('.populate-surveys').on('click', '.edit-survey-btn', editSurvey)
+  $('.populate-surveys').on('submit', '.edit-survey', onSaveSurvey)
 }
 
 module.exports = {
