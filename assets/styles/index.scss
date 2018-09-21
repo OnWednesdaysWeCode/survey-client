@@ -18,7 +18,7 @@ img {
   // display: none;
 }
 .content {
-    height: 1000px;
+    // height: 1000px;
     margin: 0 10% 0 10%;
     display: flex;
     flex-direction: column;
@@ -35,10 +35,23 @@ img {
 
 .create-survey {
   display: none;
+  margin: 10px;
+}
+
+.populate-surveys {
+  padding-top: 20px;
 }
 
 #get-surveys {
   display: none;
+  margin: 10px;
+  padding: 25px;
+}
+
+#my-surveys {
+  display: none;
+  margin: 10px;
+  padding: 25px;
 }
 
 #sign-out {
