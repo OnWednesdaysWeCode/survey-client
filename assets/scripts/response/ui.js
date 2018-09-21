@@ -1,5 +1,4 @@
 
-
 const removeFailStyle = function (className) {
   $(`.${className}-status`).removeClass('fail')
   $(`.${className}`).removeClass('border-danger')
@@ -20,9 +19,14 @@ const addSuccessStyle = function (className) {
   $(`.${className}`).addClass('border-success')
 }
 
+const failure = function () {
+  $('.general-errors').text('Unable to perform this action')
+}
+
 module.exports = {
   removeFailStyle,
   removeSuccessStyle,
   addFailStyle,
-  addSuccessStyle
+  addSuccessStyle,
+  failure
 }

@@ -52,7 +52,6 @@ const createSurveySuccess = function (event) {
   $('#create-survey input').val('')
   removeFailStyle('create-survey')
   addSuccessStyle('create-survey')
-  console.log('survey created')
 }
 
 const createSurveyFailure = function () {
@@ -60,7 +59,10 @@ const createSurveyFailure = function () {
   $('#create-survey input').val('')
   addFailStyle('create-survey')
   removeSuccessStyle('create-survey')
-  console.log('survey not created')
+}
+
+const failure = function () {
+  $('.general-errors').text('Unable to perform this action')
 }
 
 module.exports = {
@@ -68,4 +70,5 @@ module.exports = {
   createSurveySuccess,
   createSurveyFailure,
   showMySurveys,
+  failure
 }

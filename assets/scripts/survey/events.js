@@ -14,7 +14,7 @@ const onGetMySurveys = function (event) {
       userSurveys(surveryArray)
     })
     .then()
-    .catch(console.error)
+    .catch(ui.failure)
 }
 
 // creates an array in store.userSurveys that has only the user's created surveys
@@ -26,12 +26,12 @@ const userSurveys = function (allSurveyArray) {
     }
   }
   ui.showMySurveys(store.userSurveys)
-  console.log(store.userSurveys)
+  // console.log(store.userSurveys)
 }
 
 const onCreateSurvey = function (event) {
   event.preventDefault()
-  console.log('clicked!')
+  // console.log('clicked!')
   const data = getFormFields(this)
   api.createSurvey(data)
     .then(ui.createSurveySuccess)
@@ -42,7 +42,7 @@ const onCreateSurvey = function (event) {
 const onGetSurveys = function (event) {
   api.getSurveys()
     .then(ui.showAllSurveys)
-    .catch(console.error)
+    .catch(ui.failure)
 }
 
 const onDeleteSurvey = function (event) {
