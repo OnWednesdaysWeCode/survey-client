@@ -34,6 +34,7 @@ const showAllSurveys = function (data) {
 }
 
 const showMySurveys = function (mySurveys) {
+  $('.populate-surveys').html('')
   const getSurveysHtml = surveysPopulate({surveys: mySurveys})
   $('.populate-surveys').append(getSurveysHtml)
   // remove border color
