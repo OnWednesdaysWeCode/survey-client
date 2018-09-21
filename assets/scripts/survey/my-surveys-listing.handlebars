@@ -8,8 +8,8 @@
   <div class="card-body">
     <p class="error-message fail"></p>
     <form class="take-survey">
-      <input type="radio" name="response[answer]" value="{{survey.option1}}"> {{survey.option1}}<br>
-      <input type="radio" name="response[answer]" value="{{survey.option2}}"> {{survey.option2}}<br>
+      <p><strong>First Option: </strong>{{survey.option1}}</p>
+      <p><strong>Second Option: </strong>{{survey.option2}}</p>
       <button class="btn btn-danger delete-survey" type="button">Delete</button>
     </form>
   <form class="d-none edit-survey">
