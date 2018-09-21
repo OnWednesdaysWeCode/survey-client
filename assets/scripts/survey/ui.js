@@ -1,4 +1,5 @@
 const surveysPopulate = require('./surveys-listing.handlebars')
+const mySurveysPopulate = require('./my-surveys-listing.handlebars')
 
 const removeFailStyle = function (className) {
   $(`.${className}-status`).removeClass('fail')
@@ -35,7 +36,7 @@ const showAllSurveys = function (data) {
 
 const showMySurveys = function (mySurveys) {
   $('.populate-surveys').html('')
-  const getSurveysHtml = surveysPopulate({surveys: mySurveys})
+  const getSurveysHtml = mySurveysPopulate({surveys: mySurveys})
   $('.populate-surveys').append(getSurveysHtml)
   // remove border color
   $('.create-survey').removeClass('border-success')
