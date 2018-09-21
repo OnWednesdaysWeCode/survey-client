@@ -28,8 +28,6 @@ const signOut = function (event) {
   api.signOut()
     .then(ui.logOutSuccess)
     .catch(ui.logOutFail)
-    // .then(ui.signOutSuccess)
-    // .catch(ui.signOutFail)
 }
 
 // function to change password

@@ -30,17 +30,6 @@ const showSurvey = (id) => {
   })
 }
 
-// GET index response
-// const getResponses = () => {
-//   return $.ajax({
-//     method: 'GET',
-//     url: config.apiUrl + '/responses',
-//     headers: {
-//       'Authorization': 'Token token=' + store.user.token
-//     }
-//   })
-// }
-
 module.exports = {
   createResponse,
   showSurvey

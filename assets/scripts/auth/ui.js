@@ -1,5 +1,4 @@
 const store = require('./../store.js')
-const config = require('./../config.js')
 
 const removeFailStyle = function (className) {
   $(`.${className}-status`).removeClass('fail')
@@ -37,7 +36,6 @@ const toggleSignIn = function () {
 }
 
 const signUpSuccess = function () {
-  console.log('signed up')
   $('#sign-up input').val('')
   removeFailStyle('sign-up')
   addSuccessStyle('sign-up')
@@ -45,7 +43,6 @@ const signUpSuccess = function () {
 }
 
 const signUpFail = function () {
-  console.log('not signed up')
   $('#sign-up input').val('')
   $('.sign-up-status').text('We are having trouble signing you up right now. Try again later.')
   $('input').val('')
@@ -55,7 +52,7 @@ const signUpFail = function () {
 
 const signInSuccess = function (response) {
   store.user = response.user
-  console.log(store.user.email + 'signed in')
+  $('.general-errors').text('')
   $('#sign-in input').val('')
   $('.sign-in').hide()
   $('.sign-up').hide()
@@ -63,6 +60,7 @@ const signInSuccess = function (response) {
   $('.create-survey').show()
   $('#get-surveys').show()
   $('#my-surveys').show()
+  $('.general-errors').removeClass('d-none')
   $('.navbar-toggler').removeClass('d-none')
   $('.navbar-nav').removeClass('d-none')
   removeFailStyle('sign-in')
@@ -72,7 +70,6 @@ const signInSuccess = function (response) {
 }
 
 const signInFail = function () {
-  console.log('not signed in')
   $('#sign-in input').val('')
   addFailStyle('sign-in')
   $('.sign-in-status').text("We couldn't find you in our database! Make sure you enter the right username and password.")
@@ -80,8 +77,8 @@ const signInFail = function () {
 }
 
 const changePasswordSuccess = function () {
-  console.log('password changed')
   $('#change-password input').val('')
+  $('.general-errors').text('')
   $('.change-password-status').text('Your password has been changed!')
   removeFailStyle('change-password')
   addSuccessStyle('change-password')
@@ -89,7 +86,6 @@ const changePasswordSuccess = function () {
 }
 
 const changePasswordFail = function () {
-  console.log('password not changed')
   $('#change-password input').val('')
   $('.change-password-status').text('Try re-entering your credentials.')
   removeSuccessStyle('change-password')
@@ -113,12 +109,14 @@ const logOutSuccess = function () {
   removeFailStyle('sign-up')
   removeFailStyle('sign-in')
   removeFailStyle('change-password')
+  $('.general-errors').text('')
   $('.change-password-status').text('')
   $('.sign-in-status').text('')
   $('.sign-up-status').text('')
   $('#create-survey input').val('')
   $('#change-password input').val('')
   $('.navbar').addClass('d-none')
+  $('.general-errors').addClass('d-none')
   $('img').removeClass('d-none')
   $('body').removeClass('background')
 }
