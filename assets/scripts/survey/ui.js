@@ -32,6 +32,18 @@ const showAllSurveys = function (data) {
   $('.create-survey-status').html('')
 }
 
+const showMySurveys = function (mySurveys) {
+  const getSurveysHtml = surveysPopulate({surveys: mySurveys})
+  $('.populate-surveys').append(getSurveysHtml)
+  // remove border color
+  $('.create-survey').removeClass('border-success')
+  $('.create-survey').removeClass('border-danger')
+  // clear form input
+  $('#create-survey input').val('')
+  // clear survey message
+  $('.create-survey-status').html('')
+}
+
 const createSurveySuccess = function (event) {
   $('.create-survey-status').html('survey created!')
   $('#create-survey input').val('')
@@ -51,5 +63,6 @@ const createSurveyFailure = function () {
 module.exports = {
   showAllSurveys,
   createSurveySuccess,
-  createSurveyFailure
+  createSurveyFailure,
+  showMySurveys
 }
