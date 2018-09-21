@@ -41,10 +41,21 @@ const changePassword = function (event) {
     .catch(ui.changePasswordFail)
 }
 
+// function to show change password section
+const showChangePassword = function (event) {
+  event.preventDefault()
+  $('.change-password-status').text('')
+  ui.removeSuccessStyle('change-password')
+  ui.removeFailStyle('change-password')
+  $('.change-password').removeClass('d-none')
+  $('.change-password').show()
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', signUp)
   $('#sign-in').on('submit', signIn)
-  $('#sign-out').on('click', signOut)
+  $('.sign-out').on('click', signOut)
+  $('.change-password-link').on('click', showChangePassword)
   $('#change-password').on('submit', changePassword)
   $('.sign-up-btn').on('click', ui.toggleSignUp)
   $('.sign-in-btn').on('click', ui.toggleSignIn)

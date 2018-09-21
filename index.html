@@ -22,11 +22,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav d-none">
-            <li>
-              <a class="nav-link" href="#">Change Password <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link change-password-link" href="#">Change Password</a>
+              <!-- <span class="sr-only">(current)</span> -->
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="sign-out">Sign-out</a>
+              <a class="nav-link sign-out" href="#">Sign-out</a>
             </li>
           </ul>
         </div>
@@ -44,7 +45,7 @@
               <input type="password" name="credentials[password]" placeholder="Password">
               <button type="submit" class="btn">Log In</button>
           </form>
-          <p> Not yet a member? <a class="sign-up-btn">Sign up now! </a></p>
+          <p> Not yet a member? <a class="sign-up-btn" href="#">Sign up now! </a></p>
           </div>
         </div>
 
@@ -59,12 +60,12 @@
               <input type="password" name="credentials[password_confirmation]" placeholder="Confirm Password">
               <button type="submit" class="btn">Sign Up</button>
           </form>
-          <p> Already a member? <a class="sign-in-btn"> Log in</a></p>
+          <p> Already a member? <a class="sign-in-btn" href="#"> Log in</a></p>
           </div>
         </div>
 
         <!-- change password form -->
-        <div class="card bg-light mb-3 change-password">
+        <div class="card bg-light mb-3 change-password d-none">
           <div class="card-header">Change Password</div>
           <div class="card-body">
             <p class="change-password-status"></p>

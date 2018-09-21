@@ -62,7 +62,6 @@ const signInSuccess = function (response) {
   $('.change-password').show()
   $('.create-survey').show()
   $('#get-surveys').show()
-  $('#sign-out').show()
   $('.navbar-toggler').removeClass('d-none')
   $('.navbar-nav').removeClass('d-none')
   removeFailStyle('sign-in')
@@ -82,6 +81,7 @@ const changePasswordSuccess = function () {
   $('.change-password-status').text('Your password has been changed!')
   removeFailStyle('change-password')
   addSuccessStyle('change-password')
+  $('.change-password').delay(500).hide('slow')
 }
 
 const changePasswordFail = function () {
@@ -98,7 +98,6 @@ const logOutSuccess = function () {
   $('.change-password').hide()
   $('.create-survey').hide()
   $('#get-surveys').hide()
-  $('#sign-out').hide()
   $('.navbar-toggler').addClass('d-none')
   $('.navbar-nav').addClass('d-none')
   $('#populate-surveys').empty()
@@ -128,5 +127,7 @@ module.exports = {
   logOutFail,
   changePasswordFail,
   toggleSignIn,
-  toggleSignUp
+  toggleSignUp,
+  removeFailStyle,
+  removeSuccessStyle
 }
