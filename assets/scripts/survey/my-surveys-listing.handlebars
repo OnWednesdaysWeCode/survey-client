@@ -10,18 +10,15 @@
     <form class="take-survey">
       <input type="radio" name="response[answer]" value="{{survey.option1}}"> {{survey.option1}}<br>
       <input type="radio" name="response[answer]" value="{{survey.option2}}"> {{survey.option2}}<br>
-<<<<<<< HEAD
       <button class="btn btn-danger delete-survey" type="button">Delete</button>
-=======
     </form>
   <form class="d-none edit-survey">
     <input type="text" name="survey[question]" placeholder={{survey.question}}>
     <input type="text" name="survey[option1]" placeholder={{survey.option1}}>
     <input type="text" name="survey[option2]" placeholder={{survey.option2}}>
->>>>>>> On edit survey button click, forms show with placeholders
+    <Button class="d-none save-changes-btn">Save Changes</Button>
   </form>
     <Button class="edit-survey-btn">Edit survey</Button>
-    <Button class="d-none save-changes-btn">Save Changes</Button>
   </div>
     </div>
   </div>
