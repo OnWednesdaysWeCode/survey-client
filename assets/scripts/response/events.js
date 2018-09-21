@@ -3,6 +3,7 @@
 const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./api')
 const store = require('../store.js')
+const pieChart = require('./pie-chart.js')
 
 const onGetResponses = function (event) {
   event.preventDefault()
@@ -32,11 +33,17 @@ const calculateResponse = function (id) {
   }
   console.log('1', option1Count)
   console.log('2', option2Count)
+  const percentOption1 = Math.round((option1Count / responseCount) * 100)
+  const percentOption2 = Math.round((option2Count / responseCount) * 100)
+  console.log(percentOption1)
+  console.log(percentOption2)
   // '.populate-surveys #3 #total-responses'
   $('.populate-surveys ' + '#' + id + ' .total-responses').text(responseCount)
   console.log('new Id', id)
-  $('.populate-surveys ' + '#' + id + ' .option-one-responses').text(option1Count)
-  $('.populate-surveys ' + '#' + id + ' .option-two-responses').text(option2Count)
+  $('.populate-surveys ' + '#' + id + ' .option-one-responses').text(percentOption1 + '%')
+  $('.populate-surveys ' + '#' + id + ' .option-two-responses').text(percentOption2 + '%')
+  console.log(id)
+  pieChart.pieChart(store.option1.value, store.option2.value, percentOption1, percentOption2, id)
 }
 
 // const seeResults = function (event) {
