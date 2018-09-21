@@ -99,6 +99,7 @@ const logOutSuccess = function () {
   store.user = null
   $('.sign-in').show()
   $('.change-password').hide()
+  $('.change-password').addClass('d-none')
   $('.create-survey').hide()
   $('#get-surveys').hide()
   $('.navbar-toggler').addClass('d-none')
