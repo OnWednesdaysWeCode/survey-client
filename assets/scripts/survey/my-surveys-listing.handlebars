@@ -10,7 +10,7 @@
       <p class="error-message fail"></p>
       <input type="radio" name="response[answer]" value="{{survey.option1}}"> {{survey.option1}}<br>
       <input type="radio" name="response[answer]" value="{{survey.option2}}"> {{survey.option2}}<br>
-      <button class="btn submit-answer">Submit your answer!</button>
+      <button class="btn btn-danger delete-survey" type="button">Delete</button>
   </form>
   <div class="results d-none" id={{survey._id}}>
 
@@ -19,5 +19,5 @@
 </div>
 </section>
 {{else}}
-  <p> There are no surveys to take </p>
+  <p> You do not have any surveys. Create one now! </p>
 {{/each}}

@@ -46,10 +46,19 @@ const onGetSurveys = function (event) {
     .catch(console.error)
 }
 
+const onDeleteSurvey = function (event) {
+  const surveyId = $(event.target).closest('section').data('id')
+  console.log('this is ', surveyId)
+  api.destroySurvey(surveyId)
+    .then(console.log('success'))
+    .catch(console.error)
+}
+
 const addHandlers = () => {
   $('#create-survey').on('submit', onCreateSurvey)
   $('#get-surveys').on('click', onGetSurveys)
   $('#my-surveys').on('click', onGetMySurveys)
+  $('.populate-surveys').on('click', '.delete-survey', onDeleteSurvey)
 }
 
 module.exports = {
