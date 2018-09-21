@@ -7,7 +7,6 @@ const ui = require('./ui')
 const store = require('../store.js')
 
 const onGetMySurveys = function (event) {
-  event.preventDefault()
   api.getSurveys()
     .then(surveys => {
       // collects all the surveys and passes in a function that sorts for user surveys
@@ -36,7 +35,7 @@ const onCreateSurvey = function (event) {
   const data = getFormFields(this)
   api.createSurvey(data)
     .then(ui.createSurveySuccess)
-    // .then(() => onGetSurveys(event))
+    // .then(() => onGetSurveys(event)
     .catch(ui.createSurveyFailure)
 }
 
@@ -48,10 +47,9 @@ const onGetSurveys = function (event) {
 
 const onDeleteSurvey = function (event) {
   const surveyId = $(event.target).closest('section').data('id')
-  console.log('this is ', surveyId)
   api.destroySurvey(surveyId)
-    .then(console.log('success'))
-    .catch(console.error)
+    .then(() => onGetMySurveys())
+    .catch()
 }
 
 const addHandlers = () => {
