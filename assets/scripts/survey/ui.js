@@ -34,6 +34,7 @@ const showAllSurveys = function (data) {
 
 const createSurveySuccess = function (event) {
   $('.create-survey-status').html('survey created!')
+  $('#create-survey input').val('')
   removeFailStyle('create-survey')
   addSuccessStyle('create-survey')
   console.log('survey created')
@@ -41,6 +42,7 @@ const createSurveySuccess = function (event) {
 
 const createSurveyFailure = function () {
   $('.create-survey-status').html('unable to create your survey')
+  $('#create-survey input').val('')
   addFailStyle('create-survey')
   removeSuccessStyle('create-survey')
   console.log('survey not created')
