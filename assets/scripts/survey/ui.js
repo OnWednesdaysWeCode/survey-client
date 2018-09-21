@@ -22,6 +22,7 @@ const addSuccessStyle = function (className) {
 }
 
 const showAllSurveys = function (data) {
+  $('.general-errors').text('')
   $('.populate-surveys').html('')
   const getSurveysHtml = surveysPopulate({surveys: data.surveys})
   $('.populate-surveys').append(getSurveysHtml)
@@ -35,6 +36,7 @@ const showAllSurveys = function (data) {
 }
 
 const showMySurveys = function (mySurveys) {
+  $('.general-errors').text('')
   $('.populate-surveys').html('')
   const getSurveysHtml = mySurveysPopulate({surveys: mySurveys})
   $('.populate-surveys').append(getSurveysHtml)
@@ -48,6 +50,7 @@ const showMySurveys = function (mySurveys) {
 }
 
 const createSurveySuccess = function (event) {
+  $('.general-errors').text('')
   $('.create-survey-status').html('survey created!')
   $('#create-survey input').val('')
   removeFailStyle('create-survey')

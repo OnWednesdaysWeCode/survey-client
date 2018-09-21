@@ -52,6 +52,7 @@ const signUpFail = function () {
 
 const signInSuccess = function (response) {
   store.user = response.user
+  $('.general-errors').text('')
   $('#sign-in input').val('')
   $('.sign-in').hide()
   $('.sign-up').hide()
@@ -77,6 +78,7 @@ const signInFail = function () {
 
 const changePasswordSuccess = function () {
   $('#change-password input').val('')
+  $('.general-errors').text('')
   $('.change-password-status').text('Your password has been changed!')
   removeFailStyle('change-password')
   addSuccessStyle('change-password')
@@ -107,6 +109,7 @@ const logOutSuccess = function () {
   removeFailStyle('sign-up')
   removeFailStyle('sign-in')
   removeFailStyle('change-password')
+  $('.general-errors').text('')
   $('.change-password-status').text('')
   $('.sign-in-status').text('')
   $('.sign-up-status').text('')
