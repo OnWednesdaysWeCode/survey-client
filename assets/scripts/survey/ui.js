@@ -21,6 +21,7 @@ const addSuccessStyle = function (className) {
 }
 
 const showAllSurveys = function (data) {
+  $('.populate-surveys').html('')
   const getSurveysHtml = surveysPopulate({surveys: data.surveys})
   $('.populate-surveys').append(getSurveysHtml)
   // remove border color
