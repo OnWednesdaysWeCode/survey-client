@@ -1,5 +1,4 @@
 const store = require('./../store.js')
-// const config = require('./../config.js')
 
 const removeFailStyle = function (className) {
   $(`.${className}-status`).removeClass('fail')
