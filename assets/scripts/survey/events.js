@@ -36,6 +36,7 @@ const onCreateSurvey = function (event) {
   const data = getFormFields(this)
   api.createSurvey(data)
     .then(ui.createSurveySuccess)
+    // .then(() => onGetSurveys(event))
     .catch(ui.createSurveyFailure)
 }
 
